@@ -7,3 +7,5 @@ faiss-cpu
 gtts
 speechrecognition
 pydub 
+openai
+langchain-community
