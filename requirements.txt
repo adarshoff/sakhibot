@@ -9,3 +9,4 @@ speechrecognition
 pydub 
 openai
 langchain-community
+tiktoken
