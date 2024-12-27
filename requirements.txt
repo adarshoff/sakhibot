@@ -10,5 +10,4 @@ pydub
 openai
 langchain-community
 tiktoken
-PyAudio
-pipwin
+sounddevice
