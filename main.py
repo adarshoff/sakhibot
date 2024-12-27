@@ -12,6 +12,7 @@ from gtts import gTTS
 import tempfile
 import os
 
+openai_api_key = st.secrets['OPENAI_API_KEY']
 # Define CSS for the UI
 css = """
 <style>
