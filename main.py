@@ -11,7 +11,6 @@ from langchain.chains import ConversationalRetrievalChain
 from gtts import gTTS
 import tempfile
 import os
-api_key = st.secrets["OPENAI_API_KEY"]
 # Define CSS for the UI
 css = """
 <style>
