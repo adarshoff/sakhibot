@@ -261,21 +261,7 @@ def handle_user_input(user_question):
     """
     st.markdown(audio_html, unsafe_allow_html=True)
 
-import pyaudio
 
-def is_microphone_available():
-    try:
-        p = pyaudio.PyAudio()
-        count = p.get_device_count()
-        p.terminate()
-        return count > 0
-    except Exception:
-        return False
-
-if is_microphone_available():
-    print("Microphone detected. Voice input enabled.")
-    # Call your voice input function
-else:
     print("No microphone detected. Voice input is disabled.")
 
 
