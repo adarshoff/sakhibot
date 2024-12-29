@@ -290,18 +290,21 @@ import speech_recognition as sr  # Import for voice input handling
 # Function to handle voice input
 def record_voice():
     recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.info("🎤 Listening... Please speak now.")
-        try:
+    try:
+        with sr.Microphone() as source:
+            st.info("🎤 Listening... Please speak now.")
             audio = recognizer.listen(source, timeout=5)
             st.info("🔊 Processing your voice input...")
             query = recognizer.recognize_google(audio)
             return query
-        except sr.UnknownValueError:
-            st.error("Could not understand the audio. Please try again.")
-        except sr.RequestError as e:
-            st.error(f"Error with the speech recognition service: {e}")
+    except OSError:
+        st.error("No microphone available. Please connect a microphone.")
+    except sr.UnknownValueError:
+        st.error("Could not understand the audio. Please try again.")
+    except sr.RequestError as e:
+        st.error(f"Error with the speech recognition service: {e}")
     return None
+
 
 
 def main():
